@@ -6,21 +6,21 @@
 
 namespace crt
 {
-	class CounterForTestHandler : public IHandlerListener
+	class TestHCounter : public IHandlerListener
 	{
 	private:
-		const char* CounterForTestHandlerName;
+		const char* testHCounterName;
 		int32_t count;
 	public:
-		CounterForTestHandler(const char *CounterForTestHandlerName, IHandler& CounterForTestHandlerHandler) : CounterForTestHandlerName(CounterForTestHandlerName), count(0)
+		TestHCounter(const char *testHCounterName, IHandler& testHCounterHandler) : testHCounterName(testHCounterName), count(0)
 		{
-			CounterForTestHandlerHandler.addHandlerListener(this);
+			testHCounterHandler.addHandlerListener(this);
 		}
 
 		/*override keyword not supported in current compiler*/
 		void update()
 		{
-			ESP_LOGI(CounterForTestHandlerName,"%d",count);
+			ESP_LOGI(testHCounterName,"%" PRIi32,count);
 			count++;
 		}
 	}; // end class CounterForTestHandler

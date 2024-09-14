@@ -24,7 +24,7 @@ namespace crt
 
 			while (true)
 			{
-				ESP_LOGI(Task::taskName, "%d", count);
+				ESP_LOGI(Task::taskName, "%" PRIi32, count);
 				count++;
 				vTaskDelay(1000);  // Wait 1000ms.
 			}

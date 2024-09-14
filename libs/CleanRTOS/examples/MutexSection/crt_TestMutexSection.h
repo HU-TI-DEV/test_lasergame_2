@@ -54,12 +54,6 @@ namespace crt
 
 	class SharedNumbersDisplayer : public Task
 	{
-	public:
-		static void StaticMain(void *pParam)
-		{
-			SharedNumbersDisplayer* THIS = (SharedNumbersDisplayer*)pParam;
-			THIS->main();
-		}
 
 	public:
 		SharedNumbersDisplayer(const char *taskName, unsigned int taskPriority, unsigned int taskSizeBytes, unsigned int taskCoreNumber) :
@@ -87,15 +81,15 @@ namespace crt
 					MutexSection msC(this,mutexSharedIntC);
 					
 					ESP_LOGI("SharedNumbersDisplayer", "Mutexes obtained. no one else can alter the ints now");
-					ESP_LOGI("sharedIntA","%d",sharedIntA);
-					ESP_LOGI("sharedIntB","%d",sharedIntB);
-					ESP_LOGI("sharedIntC","%d",sharedIntC);
+					ESP_LOGI("sharedIntA","%" PRIi32,sharedIntA);
+					ESP_LOGI("sharedIntB","%" PRIi32,sharedIntB);
+					ESP_LOGI("sharedIntC","%" PRIi32,sharedIntC);
 					ESP_LOGI("SharedNumbersDisplayer", "Sleeping 1000ms, but in spite of that no other task can change the ints");
 					vTaskDelay(1000);
 					ESP_LOGI("SharedNumbersDisplayer", "Next three values should thus be the same as the previous three:");
-					ESP_LOGI("sharedIntA","%d",sharedIntA);
-					ESP_LOGI("sharedIntB","%d",sharedIntB);
-					ESP_LOGI("sharedIntC","%d",sharedIntC);
+					ESP_LOGI("sharedIntA","%" PRIi32,sharedIntA);
+					ESP_LOGI("sharedIntB","%" PRIi32,sharedIntB);
+					ESP_LOGI("sharedIntC","%" PRIi32,sharedIntC);
 					
 					ESP_LOGI("SharedNumbersDisplayer", "Releasing the mutexes"); // The destructors of MutexSection release the mutexes.
 				}

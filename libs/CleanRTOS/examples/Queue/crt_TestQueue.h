@@ -46,7 +46,7 @@ namespace crt
 
 				wait(queueNumbers);
                 queueNumbers.read(number);
-				ESP_LOGI("NumberDisplayTask","%d",number);
+				ESP_LOGI("NumberDisplayTask","%" PRIi32,number);
 			}
 		}
 	}; // end class NumberDisplayTask
@@ -55,13 +55,6 @@ namespace crt
 	{
 	private:
 		NumberDisplayTask& numberDisplayTask;
-
-	public:
-		static void StaticMain(void *pParam)
-		{
-			NumberSendTask* THIS = (NumberSendTask*)pParam;
-			THIS->main();
-		}
 
 	public:
 		NumberSendTask(const char *taskName, unsigned int taskPriority, unsigned int taskSizeBytes, unsigned int taskCoreNumber, NumberDisplayTask& numberDisplayTask) :

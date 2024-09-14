@@ -88,12 +88,12 @@ namespace crt
                 else if (hasFired(queue1))
                 {
                     queue1.read(number);
-                    ESP_LOGI("from queue1:","%d",number);
+                    ESP_LOGI("from queue1:","%" PRIi32,number);
                 }
                 else if (hasFired(queue2))
                 {
                     queue2.read(number);
-                    ESP_LOGI("from queue2:","%d",number);
+                    ESP_LOGI("from queue2:","%" PRIi32,number);
                 }
                 else if (hasFired(flag2))
                 {
@@ -134,10 +134,10 @@ namespace crt
 				dumpStackHighWaterMarkIfIncreased();
 													  // A bit weird se3quence of processing by the receiver task.
 				ESP_LOGI("","____________________");  // probably has to do with the ESP_LOGI delays.
-				receiveTask.ReportNumber1(count);     // The receiver handles this event first.
-				receiveTask.ReportNumber2(count);     // The receiver handles this event thirdly. ?
-				receiveTask.Notify1();				  // The receiver handles this event secondly.?
-				receiveTask.Notify2();				  // The receiver handles this event lastly.
+				receiveTask.ReportNumber1(count);     
+				receiveTask.ReportNumber2(count);     
+				receiveTask.Notify1();				  
+				receiveTask.Notify2();				  
 				
 				count++;
 				vTaskDelay(3000);

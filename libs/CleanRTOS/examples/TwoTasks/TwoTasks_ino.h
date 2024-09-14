@@ -18,5 +18,5 @@ void setup()
 
 void loop()
 {
-	vTaskDelay(1);// Nothing to do in loop - all example code runs in the 4 threads above.
+	vTaskDelay(1);// Nothing to do in loop - all example code runs in the 2 threads above.
 }

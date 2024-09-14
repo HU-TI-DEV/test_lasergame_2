@@ -7,8 +7,6 @@
 
 namespace crt
 {
-	extern ILogger& logger;
-  
 	class FlagListener : public Task
 	{
 	private:
@@ -18,7 +16,6 @@ namespace crt
 		FlagListener(const char *taskName, unsigned int taskPriority, unsigned int taskSizeBytes, unsigned int taskCoreNumber) :
 			Task(taskName, taskPriority, taskSizeBytes, taskCoreNumber), flagHi(this)
 		{
-            logger.logText("Init FlagListener");
 			start();
 		}
 
@@ -51,13 +48,6 @@ namespace crt
 	{
 	private:
 		FlagListener& flagListener;
-
-	public:
-		static void StaticMain(void *pParam)
-		{
-			FlagSetter* THIS = (FlagSetter*)pParam;
-			THIS->main();
-		}
 
 	public:
 		FlagSetter(const char *taskName, unsigned int taskPriority, unsigned int taskSizeBytes, unsigned int taskCoreNumber, FlagListener& flagListener) :

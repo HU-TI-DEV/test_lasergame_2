@@ -67,11 +67,11 @@ namespace crt
 				{
 					ESP_LOGI(Task::taskName, "Current numbers, the first two should remain synced:");
 				    poolTwoNumbersA.read(twoNumbers);
-					ESP_LOGI("TwoNumbersA","%d",twoNumbers.number1);
-					ESP_LOGI("TwoNumbersA","%d",twoNumbers.number2);
+					ESP_LOGI("TwoNumbersA","%" PRIi32,twoNumbers.number1);
+					ESP_LOGI("TwoNumbersA","%" PRIi32,twoNumbers.number2);
 					
-					ESP_LOGI("TwoNumbersB","%d",twoNumbersB.number1);
-					ESP_LOGI("TwoNumbersB","%d",twoNumbersB.number2);
+					ESP_LOGI("TwoNumbersB","%" PRIi32,twoNumbersB.number1);
+					ESP_LOGI("TwoNumbersB","%" PRIi32,twoNumbersB.number2);
 				}
 				vTaskDelay(10);  // wait long enough - giving each task a chance - to avoid the chance 
 				                 // of the watchdog timer kicking in for one of them.

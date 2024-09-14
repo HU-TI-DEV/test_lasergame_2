@@ -16,16 +16,17 @@ namespace crt
 	ILogger& logger = theLogger;	// This is the global object. It can be accessed without knowledge of the template parameter of theLogger.
 
     MainInits mainInits;            // Initialize CleanRTOS.
-	Handler<10 /*MAXLISTENERCOUNT*/> CounterForTestHandlerHandler("CounterForTestHandlerHandler", 2 /*priority*/, ARDUINO_RUNNING_CORE, 1000 /*periodMs*/, 3000 /*batchTimeUs*/); // Don't forget to call its start() member during setup().
-	CounterForTestHandler c0("c0", CounterForTestHandlerHandler);
-	CounterForTestHandler c1("c1", CounterForTestHandlerHandler);
-	CounterForTestHandler c2("c2", CounterForTestHandlerHandler);
-	CounterForTestHandler c4("c4", CounterForTestHandlerHandler);
-	CounterForTestHandler c5("c5", CounterForTestHandlerHandler);
-	CounterForTestHandler c6("c6", CounterForTestHandlerHandler);
-	CounterForTestHandler c7("c7", CounterForTestHandlerHandler);
-	CounterForTestHandler c8("c8", CounterForTestHandlerHandler);
-	CounterForTestHandler c9("c9", CounterForTestHandlerHandler);
+	Handler<10 /*MAXLISTENERCOUNT*/> testHCounterHandler("TestHCounterHandler", 2 /*priority*/, ARDUINO_RUNNING_CORE, 1000 /*periodMs*/, 3000 /*batchTimeUs*/); // Don't forget to call its start() member during setup().
+	TestHCounter c0("c0", testHCounterHandler);
+	TestHCounter c1("c1", testHCounterHandler);
+	TestHCounter c2("c2", testHCounterHandler);
+	TestHCounter c3("c3", testHCounterHandler);
+	TestHCounter c4("c4", testHCounterHandler);
+	TestHCounter c5("c5", testHCounterHandler);
+	TestHCounter c6("c6", testHCounterHandler);
+	TestHCounter c7("c7", testHCounterHandler);
+	TestHCounter c8("c8", testHCounterHandler);
+	TestHCounter c9("c9", testHCounterHandler);
 }
 
 void setup()
@@ -33,7 +34,7 @@ void setup()
 	// initialize serial communication at 115200 bits per second:
 	// Serial.begin(115200);    // Only needed when using Serial.print();
 
-	crt::CounterForTestHandlerHandler.start();  // IMPORTANT NOTE! a Handler task needs to be started manually,
+	crt::testHCounterHandler.start();  // IMPORTANT NOTE! a Handler task needs to be started manually,
 								  // AFTER its listeners have been added or have added themselves to the handler.
 	vTaskDelay(10);// allow tasks to initialize.
 	ESP_LOGI("checkpoint", "start of main");vTaskDelay(1);
@@ -42,4 +43,4 @@ void setup()
 void loop()
 {
 	vTaskDelay(1);// Nothing to do in loop - all example code runs in the 4 threads above.
-}
+}3
