@@ -12,28 +12,53 @@
 // it can be copied (from).
 
 #include <Arduino.h>
-//#include <HelloWorld.ino>    // For initial test.
-//#include <TestHwLibGlcOled.ino>
-//#include <ClockPin.ino>
-//#include <crt_TestWeightScale_hx711.h>
-//#include <TenTasks.ino>
+
+// Selecteer onderstaand de .ino van je applicatie
+// **** CleanRTOS Core Tests ****
+//#include <HelloWorld.ino>    					// For initial test.
+//#include <TwoTasks.ino>
+//#include <TenTasks.ino>						// Tip: Vergelijk dit voorbeeld met het Handler.ino voorbeeld!
+//#include <Flag.ino>
+//#include <Queue.ino>
+//#include <Timer.ino>							// 5.1 test ok op c6/zigbee
+//#include <MutexSection.ino>
+//#include <Pool.ino>
+//#include <HasFired.ino>
+//#include <AllWaitables.ino>					// 5.1 test ok op c6/zigbee
+
+// **** CleanRTOS Tools Tests ****
+//#include <Logger.ino>
+//#include <Handler.ino>
+//#include <ClockPin.ino>						// 5.1 test ok op c6/zigbee
+
+// **** .CleanGUI related Tests ****
 //#include <Vec2.ino>
 //#include <Panel.ino>
-//#include <WifiScan.ino>
-//#include <LITTLEFS_test.ino>
-//void touch_calibrate();
 //#include <Button_demo.ino>
-//#include <LITTLEFS_test.ino>
 //#include <AsyncDisplay.ino>
 //#include <Free_Font_Demo.ino>
 //#include "TestButton.ino"
+//#include <TouchscreenButton.ino>
+//#include <TouchscreenButtonGroup.ino>
+//#include <TouchscreenKeyboardLowerCase.ino>  // Not finalised yet.
+
+// **** Test of thirdparty libs CleanGUI depends on ****
+//#include <LITTLEFS_test.ino>
+//void touch_calibrate();
+
+// **** Arduino IDE Examples ****
 #include <WifiScan.ino>
+//#include <WiFiAccessPoint.ino>
+//#include <AnalogRead.ino>
+
+// other
 //#include <TouchscreenButton.ino>
 //#include <TouchscreenButtonGroup.ino>
 //#include <TouchscreenKeyboardLowerCase.ino>  // Not finalised yet.
 //#include <Queue2.ino>                        // Not sure if this is already finalised.
 //#include <oled_example.ino> // van jan
 //#include <ssd1306_128x64_i2c.ino>
+
 #include "nvs_flash.h"
 
 //------------------------------------

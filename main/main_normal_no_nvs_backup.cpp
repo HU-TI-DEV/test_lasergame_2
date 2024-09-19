@@ -47,7 +47,7 @@
 //void touch_calibrate();
 
 // **** Arduino IDE Examples ****
-#include <AnalogRead.ino>
+//#include <AnalogRead.ino>
 // kopieer voor gebruik van wifi examples van de ArduinoIDE 
 // de inhoud van main_for_wifi_scan_ard_ide_with_nvs.cpp naar main.cpp
 

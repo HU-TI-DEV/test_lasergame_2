@@ -11,9 +11,9 @@ set(COMPONENT_SRCS
 
 ## TFT_.. some incompatible stuff, it seems, for esp32-c6
 ## perhaps easily fixed (some constant names?)
-"../libs/TFT_eSPI/TFT_eSPI.cpp"
-"../libs/TFT_eWidget/src/TFT_eWidget.cpp"
-"../libs/TFT_eWidget/src/widgets/button/ButtonWidget.cpp"
+# "../libs/TFT_eSPI/TFT_eSPI.cpp"
+# "../libs/TFT_eWidget/src/TFT_eWidget.cpp"
+# "../libs/TFT_eWidget/src/widgets/button/ButtonWidget.cpp"
 
 #"../libs/esp_littlefs/src/esp_littlefs.c"
 #"../libs/esp_littlefs/src/lfs_config.c"
@@ -21,21 +21,21 @@ set(COMPONENT_SRCS
 
 ## esp_littlefs lijkt niet helemaal compatible met esp32-c6 en/of zigbee..
 ## aan de andere kant lijkt er een joltwallet/littlefs standaard bij te zitten.
-"../libs/LITTLEFS/src/esp_littlefs.c"
-"../libs/LITTLEFS/src/lfs_util.c"
-"../libs/LITTLEFS/src/littlefs_api.c"
-"../libs/LITTLEFS/src/lfs.c"
-"../libs/LITTLEFS/src/LITTLEFS.cpp"
+# "../libs/LITTLEFS/src/esp_littlefs.c"
+# "../libs/LITTLEFS/src/lfs_util.c"
+# "../libs/LITTLEFS/src/littlefs_api.c"
+# "../libs/LITTLEFS/src/lfs.c"
+# "../libs/LITTLEFS/src/LITTLEFS.cpp"
 
 #"../libs/hwlib/hwlib.cpp"
 #"../libs/hwlib/peripherals/hwlib-glcd-oled.cpp"
 #"../libs/hwlib/char-io/hwlib-ostream.cpp"
 
 # Adafruit libs for driving SSD1306 OLED:
-"../libs/Adafruit_SSD1306/Adafruit_SSD1306.cpp"
-"../libs/Adafruit-GFX-Library/Adafruit_GFX.cpp"
-"../libs/Adafruit_BusIO/Adafruit_BusIO_Register.cpp"
-"../libs/Adafruit_BusIO/Adafruit_I2CDevice.cpp"
+# "../libs/Adafruit_SSD1306/Adafruit_SSD1306.cpp"
+# "../libs/Adafruit-GFX-Library/Adafruit_GFX.cpp"
+# "../libs/Adafruit_BusIO/Adafruit_BusIO_Register.cpp"
+# "../libs/Adafruit_BusIO/Adafruit_I2CDevice.cpp"
 )
 
 set(COMPONENT_ADD_INCLUDEDIRS 
@@ -53,7 +53,6 @@ set(COMPONENT_ADD_INCLUDEDIRS
 "../libs/CleanRTOS/examples/Handler"
 "../libs/CleanRTOS/examples/Logger"
 "../libs/CleanRTOS/examples/TenTasks"
-"../libs/CleanRTOS_extraTests/examples/Handler2"
 "../libs/CleanRTOS_extraTests/examples/HasFired"
 "../libs/CleanRTOS_extraTests/examples/Mutex"
 "../libs/CleanRTOS_extraTests/examples/Queue2"
@@ -64,32 +63,36 @@ set(COMPONENT_ADD_INCLUDEDIRS
 "../libs/LaserGameUtils/examples/ClockPin"
 "../libs/hx711/src"
 "../libs/hx711/tests"
-"../libs/TFT_eSPI"
-"../libs/TFT_eSPI/TFT_Drivers"
-"../libs/TFT_eSPI/Fonts"
-"../libs/TFT_eSPI/Extensions"
-"../libs/TFT_eSPI/examples/480x320/Free_Font_Demo"
-"../libs/TFT_eWidget/src"
-"../libs/TFT_eWidget/src/widgets/button"
-"../libs/TFT_eWidget/examples/Buttons/Button_demo"
+
+# TFT_.. some incompatible stuff, it seems, for esp32-c6
+# "../libs/TFT_eSPI"
+# "../libs/TFT_eSPI/TFT_Drivers"
+# "../libs/TFT_eSPI/Fonts"
+# "../libs/TFT_eSPI/Extensions"
+# "../libs/TFT_eSPI/examples/480x320/Free_Font_Demo"
+# "../libs/TFT_eWidget/src"
+# "../libs/TFT_eWidget/src/widgets/button"
+# "../libs/TFT_eWidget/examples/Buttons/Button_demo"
 
 #"../libs/esp_littlefs/src"
 
 ## esp_littlefs lijkt niet helemaal compatible met esp32-c6 en/of zigbee..
-"../libs/LITTLEFS/src"
-"../libs/LITTLEFS/examples/LITTLEFS_test"
+# "../libs/LITTLEFS/src"
+# "../libs/LITTLEFS/examples/LITTLEFS_test"
 
 "../libs/CleanGUI/src"
 "../libs/CleanGUI/src/Internals"
 "../libs/CleanGUI_async/src"
 "../libs/CleanGUI_async/src/Internals"
 "../libs/CleanGUI_extraTests/examples/Vec2"
-"../libs/CleanGUI_for_TFT_eSPI/examples/Panel"
-"../libs/CleanGUI_for_TFT_eSPI/examples/AsyncDisplay"
-"../libs/CleanGUI_for_TFT_eSPI/examples/TouchscreenButton"
-"../libs/CleanGUI_for_TFT_eSPI/examples/TouchscreenButtonGroup"
-"../libs/CleanGUI_for_TFT_eSPI/examples/TouchscreenKeyboardLowerCase"
-"../libs/CleanGUI_for_TFT_eSPI"
+
+# "../libs/CleanGUI_for_TFT_eSPI/examples/Panel"
+# "../libs/CleanGUI_for_TFT_eSPI/examples/AsyncDisplay"
+# "../libs/CleanGUI_for_TFT_eSPI/examples/TouchscreenButton"
+# "../libs/CleanGUI_for_TFT_eSPI/examples/TouchscreenButtonGroup"
+# "../libs/CleanGUI_for_TFT_eSPI/examples/TouchscreenKeyboardLowerCase"
+# "../libs/CleanGUI_for_TFT_eSPI"
+
 "../libs"
 #"../libs/hwlib"
 #"../libs/hwlib/core"
@@ -98,16 +101,23 @@ set(COMPONENT_ADD_INCLUDEDIRS
 #"../libs/hwlib/targets"
 #"../libs/hwlib/peripherals"
 #"../libs/hwlib/char-io"
+
+# Belangrijk voor Arduino IDE code: de output van Serial Monitor
+# wordt naar een van de USB-ports van je devkit gestuurd. 
+# Als je toevallig programmeert via de andere, dan zie je niets.
+"../components/arduino-esp32/libraries/ESP32/examples/Analogread"
+"../components/arduino-esp32/libraries/WiFi/examples/WifiAccessPoint"
 "../components/arduino-esp32/libraries/WiFi/examples/WifiScan"
 "../components/arduino-esp32/libraries/LittleFS/examples/LITTLEFS_test"
+
 #"../apps/TestHwLibGlcOled"
 # Adafruit libs for driving SSD1306 OLED:
-"../libs/Adafruit_SSD1306"
-"../libs/Adafruit-GFX-Library"
-"../libs/Adafruit_BusIO"
-"../libs/Adafruit_SSD1306/examples/van_jan"
-"../libs/Adafruit_SSD1306/examples/ssd1306_128x32_i2c"
-"../libs/Adafruit_SSD1306/examples/ssd1306_128x64_i2c"
+# "../libs/Adafruit_SSD1306"
+# "../libs/Adafruit-GFX-Library"
+# "../libs/Adafruit_BusIO"
+# "../libs/Adafruit_SSD1306/examples/van_jan"
+# "../libs/Adafruit_SSD1306/examples/ssd1306_128x32_i2c"
+# "../libs/Adafruit_SSD1306/examples/ssd1306_128x64_i2c"
 )
 
 register_component()
