@@ -110,6 +110,8 @@ set(COMPONENT_ADD_INCLUDEDIRS
 "../components/arduino-esp32/libraries/WiFi/examples/WifiScan"
 "../components/arduino-esp32/libraries/LittleFS/examples/LITTLEFS_test"
 
+"../apps/kopie_van_wifi_scan_example_van_esp_idf"
+
 #"../apps/TestHwLibGlcOled"
 # Adafruit libs for driving SSD1306 OLED:
 # "../libs/Adafruit_SSD1306"

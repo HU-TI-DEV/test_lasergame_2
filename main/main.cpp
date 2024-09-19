@@ -13,6 +13,10 @@
 
 #include <Arduino.h>
 
+// Voorbeeld van een kopie van een voorbeeld uit de ESP-IDF
+#define CONFIG_EXAMPLE_SCAN_LIST_SIZE 20  // Dit blijkt nodig voor kopie_van_scan_example
+#include <kopie_van_scan_example.h>
+
 // Selecteer onderstaand de .ino van je applicatie
 // **** CleanRTOS Core Tests ****
 //#include <HelloWorld.ino>    					// For initial test.
@@ -47,7 +51,7 @@
 //void touch_calibrate();
 
 // **** Arduino IDE Examples ****
-#include <AnalogRead.ino>
+//#include <AnalogRead.ino>
 // kopieer voor gebruik van wifi examples van de ArduinoIDE 
 // de inhoud van main_for_wifi_scan_ard_ide_with_nvs.cpp naar main.cpp
 
@@ -56,6 +60,8 @@
 //#include <oled_example.ino> // van jan
 //#include <ssd1306_128x64_i2c.ino>
 //#include <crt_TestWeightScale_hx711.h>
+
+// Examples gekopieerd uit esp-idf examples:
 
 //#include "nvs_flash.h" // nodig voor WIFI functionaliteit via Arduino IDE
 //                       // NB: je kunt ook uitgaan van de vanilla esp-idf examples/wifi/scan. Die werkt zonder nvs gedoe.
