@@ -41,7 +41,6 @@ namespace crt
 			// main function
 			while (true)
 			{
-				vTaskDelay(200);
 				if (btnKlik->isPressed())
 				{
 					// ESP_LOGI("KlikAanKlikUit", "button pressed");
